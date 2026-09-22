@@ -1,0 +1,34 @@
+{
+  "name": "mydrive-vault",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MyDrive Vault - Private Google Drive Powered Cloud Storage & Media Manager",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=server\" \"npm run dev --workspace=client\"",
+    "dev:server": "npm run dev --workspace=server",
+    "dev:client": "npm run dev --workspace=client",
+    "build": "npm run build --workspace=server && npm run build --workspace=client",
+    "start": "node server/dist/index.js",
+    "install:all": "npm install && npm install --workspace=server && npm install --workspace=client"
+  },
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "keywords": [
+    "google-drive",
+    "file-manager",
+    "video-vault",
+    "media-library",
+    "cloud-storage"
+  ],
+  "author": "MyDrive Vault",
+  "license": "MIT",
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "esbuild@0.25.12": true
+  }
+}
